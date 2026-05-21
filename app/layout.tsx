@@ -1,13 +1,11 @@
 import type { Metadata, Viewport } from "next";
+import { absoluteUrl, siteConfig } from "@/lib/siteConfig";
 import "./globals.css";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://garage-instrument.com";
-
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
-  title: "Garage Instrument | Профессиональное оборудование для автосервиса",
-  description:
-    "Оборудование для автосервиса и мастерских: автомобильные подъемники, шиномонтажное оборудование, компрессоры, диагностика, гаражный инструмент, доставка, монтаж, запуск и сервисное обслуживание.",
+  metadataBase: new URL(siteConfig.url),
+  title: siteConfig.title,
+  description: siteConfig.description,
   keywords: [
     "оборудование для автосервиса",
     "оборудование для мастерской",
@@ -20,28 +18,27 @@ export const metadata: Metadata = {
     "сервисное обслуживание оборудования для мастерской"
   ],
   openGraph: {
-    title: "Garage Instrument | Профессиональное оборудование для автосервиса",
+    title: siteConfig.title,
     description:
       "Автомобильные подъемники, шиномонтажное оборудование, компрессоры, диагностика и гаражный инструмент с доставкой, монтажом, запуском и сервисным обслуживанием.",
-    url: siteUrl,
-    siteName: "Garage Instrument",
+    url: siteConfig.url,
+    siteName: siteConfig.name,
     images: [
       {
-        url: "/images/garage-instrument-hero-poster.jpg",
+        url: absoluteUrl(siteConfig.heroImagePath),
         width: 1600,
         height: 900,
         alt: "Профессиональная автомастерская с автомобильным подъемником и промышленным освещением"
       }
     ],
-    locale: "ru_RU",
+    locale: siteConfig.locale,
     type: "website"
   },
   twitter: {
     card: "summary_large_image",
-    title: "Garage Instrument | Профессиональное оборудование для автосервиса",
-    description:
-      "Профессиональное оборудование для автосервиса с доставкой, монтажом, запуском и сервисным обслуживанием.",
-    images: ["/images/garage-instrument-hero-poster.jpg"]
+    title: siteConfig.title,
+    description: siteConfig.shortDescription,
+    images: [absoluteUrl(siteConfig.heroImagePath)]
   },
   alternates: {
     canonical: "/"

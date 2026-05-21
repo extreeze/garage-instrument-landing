@@ -7,7 +7,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "tsc --noEmit"
+    "typecheck": "next typegen && tsc --noEmit",
+    "lint": "npm run typecheck"
+  },
+  "engines": {
+    "node": ">=20.9.0"
   },
   "keywords": [
     "оборудование для автосервиса",
@@ -25,6 +29,9 @@
     "next": "^16.2.6",
     "react": "^19.2.6",
     "react-dom": "^19.2.6"
+  },
+  "overrides": {
+    "postcss": "$postcss"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.3.0",

@@ -63,7 +63,7 @@ export default function HeroVideo() {
 
     videoElement.preload = "auto";
     videoElement.muted = true;
-    videoElement.loop = true;
+    videoElement.loop = false;
     videoElement.autoplay = true;
     videoElement.playsInline = true;
 
@@ -128,7 +128,6 @@ export default function HeroVideo() {
           poster={poster}
           preload="auto"
           autoPlay
-          loop
           muted
           playsInline
           tabIndex={-1}

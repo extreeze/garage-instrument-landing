@@ -8,7 +8,7 @@ import PopularSolutions from "@/components/PopularSolutions";
 import ServiceAdvantages from "@/components/ServiceAdvantages";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import WorkshopSolutions from "@/components/WorkshopSolutions";
-import { jsonLd } from "@/lib/siteData";
+import { jsonLd } from "@/lib/seo";
 
 const EquipmentQuiz = dynamic(() => import("@/components/EquipmentQuiz"), {
   loading: () => (
